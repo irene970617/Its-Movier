@@ -1,5 +1,4 @@
 import json
-import numpy as np
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
@@ -122,12 +121,9 @@ for k, v in movies_actors.items():
         graph.addEdge("A-"+item,"M-"+k,1)
 
 
+
+
 @app.route('/')
-def index():
-    return render_template('index.html')
-
-
-@app.route('/game')
 def KBGame():
     return render_template('game.jinja')
 
