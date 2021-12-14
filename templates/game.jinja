@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/html5reset.css') }}>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/game.css') }}>
+    <link rel="icon" type="image/png" href={{ url_for('static', filename='image/video-camera.png') }} >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Kevin Bacon Game</title>
+</head>
+<body>
+    <header>
+        <p class="title" id="logo">It's Movier</p>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="http://127.0.0.1:5000/game" id="current" class="nav_item">Kevin Bacon Game</a></li>
+                <li><a href="http://127.0.0.1:5000/popular" class="nav_item">Score</a></li>
+                <li><a href="http://127.0.0.1:5000/recommend"  class="nav_item">Recommendation</a></li>
+                <li><a href="http://127.0.0.1:5000/contact" class='nav_item'>Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <div class="container">
+            <img src={{ url_for('static', filename='image/movie_popcorn.jpg') }} alt="movie-popcorn" class='grid-img'>
+            <div class="container-card">
+                <h2>Kevin Bacon Game</h2>
+                <div class='card-item'>
+                    <p>The object of the game is to start with any actor who has been in a movie and connect them to Kevin Bacon in the smallest number of links possible.</p>
+                    <p>Two people are linked if they've been in a movie together.</p>
+                    <p>For instance, if Mary Pickford is the targeted actor. Louise Beavers has been in the Coquette with her, then Louise Beavers is in the first degree. </p>
+                    <p>It is very rarely, if the degree is higher 6.</p>
+                    
+                </div>
+                <form action='/game/result' method='POST'>
+                <div class='card-item'>
+                    <label name='actor1'> Enter the first actor:</label>
+                    <input name='actor1' type='text'>
+                </div>
+                <div class='card-item'>
+                    <label name='actor2'>Enter the second actor:</label>
+                    <input name='actor2' type='text'>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+                
+                
+              
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class='contact'>
+            <p>&copy; It's Movier </p>
+        </div>
+      <div class='icon'>
+          <a href="#"><img src={{ url_for('static', filename='image/instagram.png') }} alt="instagram"></a>
+          <a href="#"><img src={{ url_for('static', filename='image/facebook.png') }} alt="facebook"></a>
+          <a href="#"><img src={{ url_for('static', filename='image/twitter.png') }} alt="twitter"></a>
+      </div>
+    </footer>
+
+</body>
+</html>

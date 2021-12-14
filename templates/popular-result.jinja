@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/html5reset.css') }}>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/popular_res.css') }}>
+    <link rel="icon" type="image/png" href={{ url_for('static', filename='image/video-camera.png') }} >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>popular</title>
+</head>
+<body>
+    <header>
+        <p class="title" id="logo">It's Movier</p>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="http://127.0.0.1:5000/game" class="nav_item">Kevin Bacon Game</a></li>
+                <li><a href="http://127.0.0.1:5000/popular" id="current" class="nav_item">Score</a></li>
+                <li><a href="http://127.0.0.1:5000/recommend"  class="nav_item">Recommendation</a></li>
+                <li><a href="http://127.0.0.1:5000/contact" class='nav_item'>Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <div class="rec-container">
+            <img src={{ url_for('static', filename='image/movie_wall.jpg') }} alt="movie-wall" class='grid-img'>
+            <div class="container-card">
+                <h2>Calculate Popular Score</h2>
+                <div class='card-item'>
+                    <p>Hopefully, you have played around a bit with the Kevin Bacon Game. This calculator can help you figure out the popular score</p>
+                    <p>If the actor has 200 people for degree 1, 13000 for degree 2, and 15000 for degree 3, We compute the popular score like this:</p>
+                    <p>((1 * 200 ) + (2 * 12000) + (3 * 15000)...) / (200 + 12000 + 15000+ ... ) </p>
+                    <p>Calculate 7 degrees</p>
+                    <p>The result is the popular score. </p>
+                </div>
+                <h2 class='card-item'> {{actor}}</h2>
+                <h3>Total movie: {{star}}</h3>
+                {%if score %}
+                <table class='card-item'>
+                    <thead>
+                        <tr>
+                            <th scope='col'>Degree</th>
+                            <th scope='col'>Number of Actor</th>
+                        </tr>
+                    <thead>
+                    <tbody>
+                        
+    
+                        <tr>
+                            <td>1</td>
+                            <td>{{score[0]}}</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>{{score[1]}}</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>{{score[2]}}</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>{{score[3]}}</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>{{score[4]}}</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>{{score[5]}}</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>{{score[6]}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Score : {{popular}}</h3>
+                
+                {%endif%}
+                <p class='nosearch'>{{nosearch}}</p>
+                <button class='card-item back' type="button">
+                    <a href="http://127.0.0.1:5000/popular">Back to Score</a>
+                </button>
+                
+              
+            </div>
+    </div>
+
+        
+
+    </main>
+
+
+    <footer>
+        <div class='contact'>
+            <p>&copy; It's Movier </p>
+        </div>
+      <div class='icon'>
+          <a href="#"><img src={{ url_for('static', filename='image/instagram.png') }} alt="instagram"></a>
+          <a href="#"><img src={{ url_for('static', filename='image/facebook.png') }} alt="facebook"></a>
+          <a href="#"><img src={{ url_for('static', filename='image/twitter.png') }} alt="twitter"></a>
+      </div>
+    </footer>
+</body>
+</html>

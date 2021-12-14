@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../static/image/video-camera.png" />
+    <link rel="stylesheet" type="text/css" href="../static/css/html5reset.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/contact.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Contact It's Movier</title>
+</head>
+
+<body>
+    
+    <header>
+        <p class="title" id="logo">It's Movier</p>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="http://127.0.0.1:5000/game"  class="nav_item">Kevin Bacon Game</a></li>
+                <li><a href="http://127.0.0.1:5000/popular" class="nav_item">Score</a></li>
+                <li><a href="http://127.0.0.1:5000/recommend"   class="nav_item">Recommendation</a></li>
+                <li><a href="http://127.0.0.1:5000/contact" id="current" class='nav_item'>Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 id='intro' class='contact-page'>Contact Us</h1>
+
+        <p class='welcome'>Let's Start a Conversation</p>
+
+        <div class="contact-card">
+            <img src="../static/image/movie_seat.jpg" alt="movie seat">
+            <form action="#" method="POST">
+                <div class="contact-container-card">
+                    <h2 class='contact-card-item'>Fill in the Form</h2>
+                    <div class='contact-card-item'>
+                        <label for='fullname'>Fullname:</label>
+                        <input type="text" id='fullname' name='fullname'">
+                    </div>
+                    <div class='contact-card-item'>
+                        <label for="email">Email: &emsp; &ensp;</label>
+                        <input type="email" id='email' name='email' ">
+                    </div>
+                    <div class='contact-card-item'>
+                        <label for="message">Message</label><br>
+                        <textarea id='message' name='message' rows="4" cols="30"></textarea>
+                    </div>
+                    <div class='contact-card-item'>
+                        <button type='submit'>Submit</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <div class='contact'>
+            <p>&copy; It's Movier </p>
+        </div>
+        <div class='icon'>
+            <a href="#"><img src="../static/image/instagram.png" alt="instagram"></a>
+            <a href="#"><img src="../static/image/facebook.png" alt="facebook"></a>
+            <a href="#"><img src="../static/image/twitter.png" alt="twitter"></a>
+        </div>
+    </footer>
+</body>
+
+</html>

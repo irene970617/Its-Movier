@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/html5reset.css') }}>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/recommend_res.css') }}>
+    <link rel="icon" type="image/png" href={{ url_for('static', filename='image/video-camera.png') }} >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Recommend</title>
+</head>
+<body>
+    <header>
+        <p class="title" id="logo">It's Movier</p>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="http://127.0.0.1:5000/game" class="nav_item">Kevin Bacon Game</a></li>
+                <li><a href="http://127.0.0.1:5000/popular" class="nav_item">Score</a></li>
+                <li><a href="http://127.0.0.1:5000/recommend" id="current"  class="nav_item">Recommendation</a></li>
+                <li><a href="http://127.0.0.1:5000/contact" class='nav_item'>Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <h1>Recommendation</h1>
+    <div class='card-grid-container'>
+        {% for res in result%}
+            <div class="card card-1">
+
+                <img src={{res[5]}} alt="movie photo">
+                <div class="container-card">
+                    <h2>{{res[0]}}</h2>
+                    <div class='card-item'>
+                        <p class='year'> Year : {{res[1]}} </p>
+                        <p>Score : {{res[3]}}</p>
+                        <span>Genre : </span>
+                        {%for r in res[4]%}
+                            <span>{{r}} &nbsp;</span>
+                        {%endfor%}
+                    </div>
+                </div>
+            </div>
+
+
+        {%endfor%}
+        
+    </div>
+    <div class='down'>
+    <p class='nosearch'>{{nosearch}}</p>
+    <button class='back' type="button">
+        <a href="http://127.0.0.1:5000/recommend">Back to Recommendation</a>
+    </button>
+    </div>
+
+    </main>
+    <footer>
+        <div class='contact'>
+            <p>&copy; It's Movier </p>
+        </div>
+      <div class='icon'>
+          <a href="#"><img src={{ url_for('static', filename='image/instagram.png') }} alt="instagram"></a>
+          <a href="#"><img src={{ url_for('static', filename='image/facebook.png') }} alt="facebook"></a>
+          <a href="#"><img src={{ url_for('static', filename='image/twitter.png') }} alt="twitter"></a>
+      </div>
+    </footer>
+
+
+
+</body>
+</html>
+
+

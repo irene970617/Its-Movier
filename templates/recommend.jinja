@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/html5reset.css') }}>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/recommend.css') }}>
+    <link rel="icon" type="image/png" href={{ url_for('static', filename='image/video-camera.png') }} >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Recommend</title>
+</head>
+<body>
+    <header>
+        <p class="title" id="logo">It's Movier</p>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="http://127.0.0.1:5000/game" class="nav_item">Kevin Bacon Game</a></li>
+                <li><a href="http://127.0.0.1:5000/popular" class="nav_item">Score</a></li>
+                <li><a href="http://127.0.0.1:5000/recommend" id="current"  class="nav_item">Recommendation</a></li>
+                <li><a href="http://127.0.0.1:5000/contact" class='nav_item'>Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+    <div class="rec-container">
+            <img src={{ url_for('static', filename='image/recommend.jpg') }} alt="photo" class='grid-img'>
+            <div class="container-card">
+                <h2>Recommendation</h2>
+                <form action='/recommend/result' method='POST'>
+                    <div class='card-item'>
+                        <label>Genres:</label>
+                        <select name='genre' required>
+                            {% for g in all_genre%}
+                                <option value={{g}}>{{g}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class='card-item'>
+                        <label name='actor'> Enter an actor:</label>
+                        <input name='actor' type='text' placeholder='not required'>
+                    </div>
+                    <div class='card-item'>
+                        <label>From:</label>
+                        <select name='from_year'>
+                            {% for y in all_year%}
+                                <option value={{y}}>{{y}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class='card-item'>
+                        <label>To:</label>
+                        <select name='to_year'>
+                            {% for y in all_year%}
+                                <option value={{y}}>{{y}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+        
+                    <div class='d-grid gap-2 d-md-block'>
+                        <button type="submit">Submit</button>
+                    </div>
+                    
+                </form>
+              
+            </div>
+        </div>
+        
+    </main>
+    <footer>
+        <div class='contact'>
+            <p>&copy; It's Movier </p>
+        </div>
+      <div class='icon'>
+          <a href="#"><img src="./static/image/instagram.png" alt="instagram"></a>
+          <a href="#"><img src="./static/image/facebook.png" alt="facebook"></a>
+          <a href="#"><img src="./static/image/twitter.png" alt="twitter"></a>
+      </div>
+    </footer>
+</body>
+</html>
