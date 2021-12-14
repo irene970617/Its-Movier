@@ -215,10 +215,11 @@ def popular_res():
 
     actor = request.form['actor']
     all_degree = BFS_all(actor)
-    star = len(actors_movies[actor])
     if len(all_degree)==0:
         r = "No Search. Please enter again."
-        return render_template('popular-result.jinja', nosearch=r, star=star)
+        return render_template('popular-result.jinja', nosearch=r)
+    star = len(actors_movies[actor])
+    
     score = []
     for i in range(1, 8):
         try:
